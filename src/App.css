@@ -87,6 +87,18 @@
     justify-content: space-between;
 }
 
+.progresshere{
+    border-radius: 5%;
+    border: 1px solid red;
+    padding: 3px;
+}
+
+.deletebtn_rapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .footerComponent{
     position: fixed;
     bottom: 0;

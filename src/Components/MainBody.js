@@ -1,52 +1,23 @@
 import React, { Component } from "react";
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+
 
 export default class MainBody extends Component {
-  constructor() {
-    super();
-    this.state = {
-      todos: [
-        {
-          id: 1,
-          name: "Todo1",
-          description: "Discription here",
-          status: "In progress",
-        },
-        {
-          id: 2,
-          name: "Todo2",
-          description: "Discription here",
-          status: "In progress",
-        },
-        {
-          id: 3,
-          name: "Todo3",
-          description: "Discription here",
-          status: "In progress",
-        },
-        {
-          id: 4,
-          name: "Todo4",
-          description: "Discription here",
-          status: "In progress",
-        },
-        {
-          id: 1,
-          name: "Todo5",
-          description: "Discription here",
-          status: "In progress",
-        },
-      ],
-    };
-  }
+   
   render() {
     return (
       <div className="mainpage">
-        {this.state.todos.map((element, index) => {
+        {this.props.todos.map((element, index) => {
           return (
             <div className="singletodo">
               <h2 className="todohead">{element.name}</h2>
               <p className="discription">{element.description} </p>
+              <div className="deletebtn_rapper">
               <h4 className="progresshere">{element.status}</h4>
+                <DeleteIcon onClick = { () => this.props.deleteTodo(element.id)} />
+                <EditIcon/>
+              </div>
             </div>
           );
         })}
