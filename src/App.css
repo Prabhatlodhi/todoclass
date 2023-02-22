@@ -10,9 +10,30 @@
     text-align: center;
     padding-top: 30px;
     font-size: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
+.mainpage{
+    padding: 30px;
+    width: 100vw;
+    /* height: 75vh; */
+    height: calc(100vh-70px);
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+.singletodo{
+    margin: 10px;
+    padding: 25px;
+    border: 1px solid rgb(0, 0, 0);
+    width: 18%;
+    height: max-content;
+    
+}
 .plusbtn{
     height: 40px;
     width: 40px;
@@ -27,10 +48,13 @@
 
  
 .create_todo{
-     
+     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border: 1px solid rgb(244, 221, 221); 
     width: 500px;
-    margin: auto;
+    /* margin: auto; */
     text-align: center;  
     border-radius: 3px;
     background: white;
