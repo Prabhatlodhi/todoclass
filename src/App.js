@@ -38,19 +38,21 @@ export default class App extends Component {
             status: "In progress",
           },
           {
-            id: 1,
+            id: 5,
             name: "Todo5",
             description: "Discription here",
             status: "In progress",
           },
         ],
+        currentEditModal: {},
     };
 }
 
 //for disapper the modal
-changeModalStatus = (status) => {
+changeModalStatus = (status, id) => {
     this.setState({
         modalStatus: status,
+        currentEditModal: this.state.todos.filter((ele)=> ele.id === id)[0],
     })
 }
 
@@ -69,15 +71,32 @@ deleteTodo = (id) => {
   this.setState({ todos : this.state.todos.filter((ele) => ele.id !== id )});
 }
 
+updateTodo = (name, description, status, id)=> {
+  const temp = this.state.todos.map((ele)=>{
+    if(ele.id === id){
+      return{
+        id,
+        name,
+        status,
+        description,
+      }
+    }
+    return ele;
+  })
+  this.setState({
+    todos: temp
+  })
+}
+
 
   render() {
     return (
       <div className="ooverall">
         <Header changeStatus={this.changeModalStatus}/>
-        <MainBody todos={this.state.todos} deleteTodo={this.deleteTodo}/>
+        <MainBody todos={this.state.todos} deleteTodo={this.deleteTodo} changeStatus={this.changeModalStatus}/>
         {
           this.state.modalStatus && (
-            <Modal changeStatus={this.changeModalStatus} createTodo={this.createTodo}/>
+            <Modal changeStatus={this.changeModalStatus} createTodo={this.createTodo} currentEditTodo={this.state.currentEditModal} updateTodo={this.updateTodo}/>
           )
         }
         <Footer />

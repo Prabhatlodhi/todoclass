@@ -15,8 +15,8 @@ export default class MainBody extends Component {
               <p className="discription">{element.description} </p>
               <div className="deletebtn_rapper">
               <h4 className="progresshere">{element.status}</h4>
-                <DeleteIcon onClick = { () => this.props.deleteTodo(element.id)} />
-                <EditIcon/>
+                <DeleteIcon onClick = {() => this.props.deleteTodo(element.id)} />
+                <EditIcon onClick={()=>this.props.changeStatus(true, element.id)}/>
               </div>
             </div>
           );
