@@ -4,9 +4,9 @@ export default class Header extends Component {
   render() {
     return (
       <div className='headerComponent'>
-        Todo App Using Class Componenet 
-        <span className='plusbtn'>+</span>
-      </div>
+        <h4>Todo App Using Class Componenet </h4>
+        <button className='plusbtn' onClick={()=>this.props.changeStatus(true)}>+</button>
+      </div> 
     )
   }
 }

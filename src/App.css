@@ -10,6 +10,7 @@
     text-align: center;
     padding-top: 30px;
     font-size: 30px;
+    margin-bottom: 50px;
 }
 
 .plusbtn{
@@ -21,10 +22,46 @@
     border: 1px solid black;
     background-color: rgb(255, 255, 255);
     color: rgb(243, 13, 13); 
+    cursor: pointer;
 }
 
+ 
+.create_todo{
+     
+    border: 1px solid rgb(244, 221, 221); 
+    width: 500px;
+    margin: auto;
+    text-align: center;  
+    border-radius: 3px;
+    background: white;
+    box-shadow:  25px 25px 11px #7e7da1,
+                 -25px -25px 11px #ffffff;
+}
 
+.create_todo ul li{
+    list-style: none;
+    margin: 10px;
+}
 
+.create_todo li .Textarea{
+    width:450px;
+}
+
+.create_todo li .allBtn{
+    width:150px;
+}
+
+.allBtn{
+    background: linear-gradient(145deg, white);
+    box-shadow:  125px 125px1 11px #7e7da1,
+             -125px -125px 111px #ffffff;
+}
+
+.btncontainer{
+    padding: 0px 50px;
+    display: flex;
+    justify-content: space-between;
+}
 
 .footerComponent{
     position: fixed;

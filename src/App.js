@@ -6,12 +6,29 @@ import Footer from "./Components/Footer";
 import Modal from "./Components/Modal";
 
 export default class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+        modalStatus: false,
+    };
+}
+
+changeModalStatus = (status) => {
+    this.setState({
+        modalStatus: status,
+    })
+}
+
   render() {
     return (
-      <div className="">
-        <Header />
+      <div className="ooverall">
+        <Header changeStatus={this.changeModalStatus}/>
         <MainBody />
-        <Modal />
+        {
+          this.state.modalStatus && (
+            <Modal changeStatus={this.changeModalStatus}/>
+          )
+        }
         <Footer />
       </div>
     );
